@@ -1,0 +1,81 @@
+@font-face{
+	font-family: Raleway-LightItalic;
+	src :url(fonts/Raleway-LightItalic.ttf);
+}
+
+@font-face{
+	font-family: Raleway-ExtraLightItalic;
+	src :url(fonts/Raleway-ExtraLightItalic.ttf);
+}
+@font-face {
+  font-family: 	Caveat-Bold;
+  src: url(fonts/Caveat-Bold.ttf);
+}
+
+@font-face {
+  font-family: 	OpenSans-LightItalic;
+  src: url(fonts/OpenSans-LightItalic.ttf);
+}
+
+@font-face {
+  font-family: 	OpenSans-Regular;
+  src: url(fonts/OpenSans-Regular.ttf);
+}
+.mid-01{
+	width: 100%;
+	position: relative;
+	
+	height: 160px;
+}
+
+.mid-txt{
+	font-family: Raleway-LightItalic;
+	font-size: 76px;
+	text-align: center;
+	position: absolute;
+	left: 34%;
+	margin-top: 10px;
+}
+
+
+#txt-mid{
+	font-family: Raleway-ExtraLightItalic;
+	font-size: 62px; 
+}
+
+.card-new-05{
+	width: 75%;
+	background-color: ;
+	height: 100%;
+	margin:auto;
+	margin-top: -40px;
+	padding: 10px;
+	transform: scale();
+}
+
+
+.card-new-5-txt{
+	font-size: 35px;
+	font-family: Raleway-LightItalic;
+	font-weight: bold;
+}
+.card-new-5-txt2{
+	font-size: 21px;
+	font-family: Raleway-ExtraLightItalic;
+	font-weight: ;
+}
+.card-new-5-txt3{
+	font-size: 28px;
+	font-family: Raleway-LightItalic;
+	font-weight: bold;
+}
+.card-new-5-txt4{
+	font-size: 24px;
+	font-family: OpenSans-Regular;
+	font-weight: ;
+}
+.card-new-5-txt5{
+	font-size: 24px;
+	font-family: ;
+	font-weight: ;
+}

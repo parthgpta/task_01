@@ -1,0 +1,233 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Home{% endblock %}
+{% block content %}
+
+	<div class="mid-01">
+		<div class="mid-txt">
+			<strong>API's</strong>
+			<span id='txt-mid'>Documentation</span>
+		</div>
+	</div>
+	
+	<div class="card-new-05">
+		<div class="card-new-5-txt">Introduction</div><hr><br>
+		<div class="card-new-5-txt2">
+			With <strong>these API's</strong> you can get access to some of our data in machine-readable JSON format.<br><br>
+			To access the data you just send a HTTP-request to address<strong><code>" /api/{methodname} "</code> </strong>with method-specific parameters. Each method description has an example URL.<br><br><br>
+		</div>
+		<div class="card-new-5-txt">Features</div><hr><br>
+		<div class="card-new-5-txt2">
+			<ul>
+				<li>User Can signup on the Portal and can Login to their accounts.</li>
+				<li>User can manage thier email and name linked  with their accounts</li>
+				<li>User can manage their Calendar events , they can create , edit and delete their calendar events .</li>
+			</ul>
+			<br>
+		</div>
+		<div class="card-new-5-txt">WorkFlow</div><hr><br>
+		<div class="card-new-5-txt2">
+			<ul>
+				<li>User has to create his account, through signup on the portal</li>
+				<li>User has to Login into their accounts to access the account  and event informations</li>
+				<li>Users can create , update and delete calendar events .</li>
+			</ul>
+			<br><br>
+		</div>
+
+	<div class="card-new-5-txt3">Method Names</div><hr><br>
+		<ul>
+			<li>
+				<div class="card-new-5-txt4">
+					<strong>Signup - method (" createuser ")</strong>					
+				</div><br>
+				<div class="card-new-5-txt2">
+					User has to make a POST request to the URL . 
+					They need to send a Username  ,Password , Email , First Name and Last Name.<br>
+					<code> " <br>
+					    {<br>
+					        
+					        &emsp; "username": "newuser",<br>
+					        &emsp; "password": "testpassword",<br>
+					        &emsp; "first_name": "test",<br>
+					        &emsp; "last_name": "manager",<br>
+					        &emsp; "email": "check@gmail.com"<br>
+					    }<br>
+					    
+					    "
+					</code>	<br>
+					<strong>URL - <code>" /api/createuser "</code> </strong>
+				</div>
+			</li> <br><br>
+
+
+			<li>
+				<div class="card-new-5-txt4">
+					<strong>Login - method (" rest-auth/login ")</strong>					
+				</div><br>
+				<div class="card-new-5-txt2">
+					User has to make a POST request to the URL with Username  ,Password and Email <br>
+					<strong>Example -</strong><br>
+					<code> " <br>
+					    {<br>
+					        
+					        &emsp; "username": "newuser",<br>
+					        &emsp; "password": "testpassword",<br>
+					        &emsp; "email": "check@gmail.com"<br>
+					    }<br>
+					    
+					    "
+					</code> <br>
+					<strong>URL - <code>" /api/rest-auth/login/"</code> </strong>
+				</div>
+			</li> <br><br>
+
+			
+			<li>
+				<div class="card-new-5-txt4">
+						<strong>Logout - method (" rest-auth/logout ")</strong>					
+				</div><br>
+				<div class="card-new-5-txt2">
+						User has to make a POST request to the URL  to Logout of their Account <br><br>					
+						<strong>URL - <code>" /api/rest-auth/logout/"</code> </strong>
+				</div>
+			</li> <br><br>
+
+			<li>
+				<div class="card-new-5-txt4">
+					<strong>Get User Details - method (" userdetails ")</strong>					
+				</div><br>
+				<div class="card-new-5-txt2">
+					User has to make a GET request to the URL . 
+					It sends the Response of the data of the user their ID , First Name , Last Name ,Username and  Email<br>
+					<code> " <br>
+					    {<br>
+					        &emsp; "id": "2",<br>
+					        &emsp; "first_name": "test",<br>
+					        &emsp; "last_name": "manager",<br>
+					        &emsp; "username": "newuser",<br>
+					        &emsp; "email": "check@gmail.com"<br>
+					    }<br>
+					    
+					    "
+					</code>	<br>
+					<strong>URL - <code>" /api/userdetails "</code> </strong>
+				</div>
+			</li> <br><br>
+
+			<li>
+				<div class="card-new-5-txt4">
+					<strong>Update User Details - method (" update/userdetails/{ID of User} ")</strong>					
+				</div><br>
+				<div class="card-new-5-txt2">
+					User has to make a POST request to the URL , to Change its account Information . User has to send updated Username and/or Password
+					and the ID in the method is the user ID (as 2 in above case) <br>
+					<code> " <br>
+					    {<br>
+					        &emsp; "username": "newuser",<br>
+					        &emsp; "password": "newpassword"<br>
+					    }<br>
+					    
+					    "
+					</code>	<br>
+					<strong>URL - <code>" /api/update/userdetails/2 "</code> </strong>
+				</div>
+			</li> <br><br>
+
+			<li>
+				<div class="card-new-5-txt4">
+					<strong>Get Event Details - method (" eventdetails ")</strong>					
+				</div><br>
+				<div class="card-new-5-txt2">
+					User has to make a GET request to the URL ,to get about all his calendar events . It sends response of all Calendar Events of 
+					the Logged in user.  <br>
+					<code> " <br>[<br>
+					    {<br>
+					        &emsp; "id": "1",<br>
+					        &emsp; "date": "2020-10-05"<br>
+					        &emsp; "time": "18:30:00"<br>
+					        &emsp; "details": "Birthday"<br>
+					    }<br>,<br>
+
+					    {<br>
+					        &emsp; "id": "2",<br>
+					        &emsp; "date": "2020-12-12"<br>
+					        &emsp; "time": "08:45:00"<br>
+					        &emsp; "details": "Work"<br>
+					    }<br>
+					    
+					    "
+					</code><br>
+					<strong>URL - <code>" /api/eventdetails "</code> </strong>
+				</div>
+			</li> <br><br>
+
+
+			<li>
+				<div class="card-new-5-txt4">
+					<strong>Create New Event - method (" create/events/ ")</strong>					
+				</div><br>
+				<div class="card-new-5-txt2">
+					User has to make a POST request to the URL ,to create a new calendar events .User has to send date , time and details regarding the event. <br>
+					<code> " <br>
+					    {<br>
+					        
+					        &emsp; "date": "2020-10-05"<br>
+					        &emsp; "time": "18:30:00"<br>
+					        &emsp; "details": "Birthday"<br>
+					    }<br>
+					    
+					    "
+					</code><br>
+					<strong>URL - <code>" /api/create/events/ "</code> </strong>
+				</div>
+			</li> <br><br>
+
+			<li>
+				<div class="card-new-5-txt4">
+					<strong>Update Event - method (" update/events/{ID of event}/ ")</strong>					
+				</div><br>
+				<div class="card-new-5-txt2">
+					User has to make a POST request to the URL ,to update new calendar events .User has to send date , time and details regarding the updated event. <br>
+					<code> " <br>
+					    {<br>
+					        
+					        &emsp; "date": "2020-10-05"<br>
+					        &emsp; "time": "18:30:00"<br>
+					        &emsp; "details": "Updated Event"<br>
+					    }<br>
+					    
+					    "
+					</code><br>
+					<strong>URL - <code>" /api/update/events/2 "</code> </strong>
+				</div>
+			</li> <br><br>
+
+			<li>
+				<div class="card-new-5-txt4">
+					<strong>Delete Event - method (" delete/events/{ID of event}/ ")</strong>					
+				</div><br>
+				<div class="card-new-5-txt2">
+					User has to make a POST request to the URL ,to delete a  calendar events .<br>
+					
+					<strong>URL - <code>" /api/delete/events/2 "</code> </strong>
+				</div>
+			</li> <br><br>
+
+
+
+
+		</ul> 
+		
+	</div>
+
+
+
+
+
+   
+
+
+
+
+{% endblock %}
